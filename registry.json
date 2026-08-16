@@ -26,7 +26,7 @@
     {
       "name": "@omdsh-plugins/omdsh-shortcuts",
       "repo": "omdsh-plugins/omdsh-shortcuts",
-      "version": "0.1.0",
+      "version": "0.1.1",
       "description": "Bind a chord to anything the harness can do: a menu the desktop shell renders natively, a switchboard the runtime dispatches through, and an in-page listener for the web — one document, two surfaces",
       "plughub": {
         "displayName": {
@@ -48,16 +48,16 @@
     {
       "name": "@omdsh-plugins/omdsh-remdev",
       "repo": "omdsh-plugins/omdsh-remdev",
-      "version": "0.1.0",
-      "description": "Remote development for the DeepSeek Harness web GUI: connect a workspace to an SSH server, provision a .dsh-server there, and run its files, terminals, and agents on that machine",
+      "version": "0.1.1",
+      "description": "Remote development for the DeepSeek Harness web GUI: connect a workspace to an SSH server, provision a .dsh-server there, run its files, terminals, and agents on that machine, and load its project skills",
       "plughub": {
         "displayName": {
           "": "Remote Development",
           "zh": "远程开发"
         },
         "summary": {
-          "": "Attach a workspace to an SSH server and run its files, terminals, and agents there.",
-          "zh": "把工作区接到一台 SSH 服务器上，文件、终端和智能体都在那台机器上跑。"
+          "": "Attach a workspace to an SSH server: its files, terminals, agents, and project skills all live there.",
+          "zh": "把工作区接到一台 SSH 服务器上，文件、终端、智能体和项目技能都在那台机器上。"
         },
         "category": "workspace",
         "settings": [
@@ -109,6 +109,25 @@
         ],
         "docs": "https://github.com/omdsh-plugins/omdsh-usage#readme",
         "order": 30
+      }
+    },
+    {
+      "name": "@omdsh-plugins/omdsh-status",
+      "repo": "omdsh-plugins/omdsh-status",
+      "version": "0.1.0",
+      "description": "Current project and its git state at a glance for the DeepSeek Harness web GUI: the project name with its branch and change counts, at the top-right corner of the Work window's conversation header",
+      "plughub": {
+        "displayName": {
+          "": "Status",
+          "zh": "状态"
+        },
+        "summary": {
+          "": "Project name and git branch with change counts, at the top-right of the Work window.",
+          "zh": "在 Work 窗口右上角显示当前项目名称与 git 分支和变更计数。"
+        },
+        "category": "insight",
+        "docs": "https://github.com/omdsh-plugins/omdsh-status#readme",
+        "order": 35
       }
     },
     {
@@ -172,7 +191,7 @@
     {
       "name": "@omdsh-plugins/omdsh-justchat",
       "repo": "omdsh-plugins/omdsh-justchat",
-      "version": "0.1.0",
+      "version": "0.1.1",
       "description": "Chat mode for the DeepSeek Harness web GUI: a Chat/Work switch above the conversation, a workspace-free session-intent surface, and the managed Chat workspace its conversations are kept in",
       "plughub": {
         "displayName": {
@@ -191,7 +210,7 @@
     {
       "name": "@omdsh-plugins/omdsh-sidechat",
       "repo": "omdsh-plugins/omdsh-sidechat",
-      "version": "0.1.0",
+      "version": "0.1.1",
       "description": "Summon a conversation of its own anywhere in the DeepSeek Harness web GUI: a side panel anchored to whatever you were looking at, asking in its own session so the conversation you are running is untouched",
       "plughub": {
         "displayName": {
