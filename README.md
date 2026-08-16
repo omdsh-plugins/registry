@@ -126,13 +126,25 @@ Until step 2, the hub shows the plugin as current: it compares against what this
 file advertises, and a row that never moves never offers an update. That is the
 cost of a curated catalog, and it is the reason the generator exists.
 
-## Moving to npm
+## Where a row installs from
 
-Rows carry no `spec` today, so each installs as `github:<repo>`, which builds
-the plugin from source in its `prepare` script. Once `@omdsh-plugins/*` is
-published to npm, flip `SPEC_SOURCE` in `build.mjs` from `'github'` to `'npm'`
-and re-run: every row then carries its package name and installs from the
-registry with no build. It is one constant, and it moves all of them together.
+Two answers, decided per package rather than for the collection, because the
+packages are not released together.
+
+| | `spec` | What an install does |
+|---|---|---|
+| Published to npm | `"@omdsh-plugins/omdsh-base"` | Fetches the release. No build, no toolchain needed |
+| Not yet published | omitted → `github:<repo>` | Clones the repository, which builds itself in `prepare` |
+
+Which is which is the `ON_NPM` set at the top of `build.mjs`. **Add a name to it
+the moment `npm publish` succeeds for that package, and re-run** — a row naming
+a package npm does not have is a row whose Install button fails, which is the
+one thing a single collection-wide flag would have got wrong.
+
+Today `@omdsh-plugins/omdsh-base` and `@omdsh-plugins/omdsh-plughub` are on npm
+and the other nine install from GitHub. `node registry/build.mjs` prints the
+split, so a run that failed to pick up a publish is visible immediately rather
+than in a card somebody clicks a week later.
 
 ## Commands
 

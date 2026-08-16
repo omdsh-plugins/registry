@@ -27,16 +27,26 @@ const HERE = dirname(fileURLToPath(import.meta.url))
 const COLLECTION = resolve(HERE, '..')
 
 /**
- * Which specifier each row installs from.
+ * The packages that exist on npm, and therefore install from it.
  *
- * `github` while the collection is unpublished: a row with no `spec` is
- * installed as `github:<repo>`, which works the moment a repository is pushed
- * and costs a `prepare` build per install. Switching to `npm` emits the package
- * name instead, which is a registry install — change this one constant once
- * `@omdsh-plugins/*` is published, re-run, and every row moves together.
- * @type {'github' | 'npm'}
+ * Per package rather than one switch for the collection, because the two are
+ * not released together: a name listed here emits `spec: "<name>"` and installs
+ * from the registry, and every other row omits `spec` and is installed as
+ * `github:<repo>` — a clone that builds itself in `prepare`. Both work; the
+ * registry install is simply faster and needs no toolchain on the machine
+ * doing it.
+ *
+ * A single flag here would have been wrong in one specific way: it would have
+ * emitted npm specifiers for the nine packages that are NOT published, and a
+ * row naming a package the registry does not have is a row whose Install button
+ * fails. The cost is that this list is hand-kept — add a name the moment
+ * `npm publish` succeeds for it, and re-run.
+ * @type {ReadonlySet<string>}
  */
-const SPEC_SOURCE = 'github'
+const ON_NPM = new Set([
+  '@omdsh-plugins/omdsh-base',
+  '@omdsh-plugins/omdsh-plughub',
+])
 
 /** The GitHub account the collection is published under. */
 const UPSTREAM = 'omdsh-plugins'
@@ -112,8 +122,9 @@ function collect() {
     rows.push({
       name: manifest.name,
       repo,
-      // Omitted for `github`, where the hub derives `github:<repo>` itself.
-      ...SPEC_SOURCE === 'npm' ? { spec: manifest.name } : {},
+      // Omitted for an unpublished package, where the hub derives
+      // `github:<repo>` from the row's own `repo` field.
+      ...ON_NPM.has(manifest.name) ? { spec: manifest.name } : {},
       // What an update is judged against. A plugin whose version moves without
       // its row moving with it simply stops offering updates, which is why this
       // file is generated rather than kept by hand.
@@ -151,5 +162,14 @@ if (process.argv.includes('--check')) {
   console.log(`registry.json is current (${String(plugins.length)} plugins)`)
 } else {
   writeFileSync(target, rendered)
-  console.log(`wrote registry.json (${String(plugins.length)} plugins, ${SPEC_SOURCE} specifiers)`)
+  // Both counts, because "which rows install from npm" is the one thing about
+  // this file that changes without any package.json changing, and a run that
+  // did not pick up a publish should be visible here rather than in a card
+  // somebody clicks a week later.
+  const fromNpm = plugins.filter(row => row.spec !== undefined)
+  console.log(`wrote registry.json (${String(plugins.length)} plugins, ${String(fromNpm.length)} from npm)`)
+  for (const row of fromNpm) console.log(`  npm    ${row.name}`)
+  for (const row of plugins.filter(candidate => candidate.spec === undefined)) {
+    console.log(`  github ${row.name}`)
+  }
 }
