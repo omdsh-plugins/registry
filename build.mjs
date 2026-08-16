@@ -96,9 +96,11 @@ function collect() {
     // Two conditions, and both are load-bearing.
     //
     // The scan reaches REPOSITORY ROOTS only — one directory down, which is how
-    // this collection is laid out. That is what leaves the two application
-    // workspaces out: `omdsh-desktop` and `omdsh-tui` declare no bundle at their
-    // roots, and the packages nested inside them are never visited.
+    // this collection is laid out. That is what leaves the three application
+    // repositories out: `omdsh-desktop`, `omdsh-tui` and `omdsh-webapp` declare
+    // no bundle at their roots, and the packages nested inside them are never
+    // visited. `omdsh-webapp` declares none anywhere — it packages a profile
+    // into a macOS application rather than composing a layer into one.
     //
     // The second is a good thing rather than an accident to tidy up later.
     // `omdsh-tui/packages/tui-app` DOES declare a bundle patch, but it is a
