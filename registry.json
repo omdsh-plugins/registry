@@ -210,7 +210,7 @@
     {
       "name": "@omdsh-plugins/omdsh-sidechat",
       "repo": "omdsh-plugins/omdsh-sidechat",
-      "version": "0.1.1",
+      "version": "0.1.2",
       "description": "Summon a conversation of its own anywhere in the DeepSeek Harness web GUI: a side panel anchored to whatever you were looking at, asking in its own session so the conversation you are running is untouched",
       "plughub": {
         "displayName": {
