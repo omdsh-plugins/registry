@@ -1,0 +1,228 @@
+{
+  "plugins": [
+    {
+      "name": "@omdsh-plugins/omdsh-plughub",
+      "repo": "omdsh-plugins/omdsh-plughub",
+      "version": "0.1.0",
+      "description": "The omdsh plugin hub: a Settings tab that installs and removes omdsh plugins from a configurable upstream, and configures every installed one from the settings schema it already registers",
+      "plughub": {
+        "displayName": {
+          "": "Plugin Hub",
+          "zh": "插件中心"
+        },
+        "summary": {
+          "": "Install, remove, and configure omdsh plugins from inside Settings.",
+          "zh": "在设置里安装、卸载并配置 omdsh 插件。"
+        },
+        "category": "system",
+        "settings": [
+          "omdsh-plughub"
+        ],
+        "docs": "https://github.com/omdsh-plugins/omdsh-plughub#readme",
+        "order": 0
+      }
+    },
+    {
+      "name": "@omdsh-plugins/omdsh-shortcuts",
+      "repo": "omdsh-plugins/omdsh-shortcuts",
+      "version": "0.1.0",
+      "description": "Bind a chord to anything the harness can do: a menu the desktop shell renders natively, a switchboard the runtime dispatches through, and an in-page listener for the web — one document, two surfaces",
+      "plughub": {
+        "displayName": {
+          "": "Shortcuts",
+          "zh": "快捷键"
+        },
+        "summary": {
+          "": "One chord per command, on the desktop menu and in the page alike.",
+          "zh": "为每个命令绑定一个快捷键，桌面菜单与网页端共用一份配置。"
+        },
+        "category": "input",
+        "settings": [
+          "omdsh-shortcuts"
+        ],
+        "docs": "https://github.com/omdsh-plugins/omdsh-shortcuts#readme",
+        "order": 10
+      }
+    },
+    {
+      "name": "@omdsh-plugins/omdsh-remdev",
+      "repo": "omdsh-plugins/omdsh-remdev",
+      "version": "0.1.0",
+      "description": "Remote development for the DeepSeek Harness web GUI: connect a workspace to an SSH server, provision a .dsh-server there, and run its files, terminals, and agents on that machine",
+      "plughub": {
+        "displayName": {
+          "": "Remote Development",
+          "zh": "远程开发"
+        },
+        "summary": {
+          "": "Attach a workspace to an SSH server and run its files, terminals, and agents there.",
+          "zh": "把工作区接到一台 SSH 服务器上，文件、终端和智能体都在那台机器上跑。"
+        },
+        "category": "workspace",
+        "settings": [
+          "omdsh-remdev"
+        ],
+        "docs": "https://github.com/omdsh-plugins/omdsh-remdev#readme",
+        "order": 20
+      }
+    },
+    {
+      "name": "@omdsh-plugins/omdsh-remctrl",
+      "repo": "omdsh-plugins/omdsh-remctrl",
+      "version": "0.1.0",
+      "description": "Remote control for the DeepSeek Harness: a second front door on its own port, behind device pairing and a tiered method allowlist, so a phone on your tailnet can watch a session, approve what it asks for, and hand it new work",
+      "plughub": {
+        "displayName": {
+          "": "Remote Control",
+          "zh": "远程控制"
+        },
+        "summary": {
+          "": "Watch, approve, and dispatch from a phone on your tailnet.",
+          "zh": "在 tailnet 上用手机查看进度、批准工具调用、下发新任务。"
+        },
+        "category": "system",
+        "settings": [
+          "omdsh-remctrl"
+        ],
+        "docs": "https://github.com/omdsh-plugins/omdsh-remctrl#readme",
+        "order": 30
+      }
+    },
+    {
+      "name": "@omdsh-plugins/omdsh-usage",
+      "repo": "omdsh-plugins/omdsh-usage",
+      "version": "0.1.0",
+      "description": "API spend at a glance for the DeepSeek Harness web GUI: this conversation, this project, and the account balance, beside the mode chip in Chat and Work and in the corner in Code",
+      "plughub": {
+        "displayName": {
+          "": "Usage",
+          "zh": "用量"
+        },
+        "summary": {
+          "": "Session spend, project spend, and account balance, in the conversation's top row.",
+          "zh": "在会话顶栏显示本次会话花费、本项目花费与账户余额。"
+        },
+        "category": "insight",
+        "settings": [
+          "omdsh-usage"
+        ],
+        "docs": "https://github.com/omdsh-plugins/omdsh-usage#readme",
+        "order": 30
+      }
+    },
+    {
+      "name": "@omdsh-plugins/omdsh-base",
+      "repo": "omdsh-plugins/omdsh-base",
+      "version": "0.1.0",
+      "description": "The session-mode system for the DeepSeek Harness web GUI: the segment registry every mode plugin registers into, the switch that renders them, and the sidebar dots that colour their conversations",
+      "plughub": {
+        "displayName": {
+          "": "Mode System",
+          "zh": "模式系统"
+        },
+        "summary": {
+          "": "The switch every mode plugin registers into, and the sidebar dots that colour their conversations.",
+          "zh": "所有模式插件共用的模式开关，以及按模式给侧栏会话上色的圆点。"
+        },
+        "category": "system",
+        "docs": "https://github.com/omdsh-plugins/omdsh-base#readme",
+        "order": 40
+      }
+    },
+    {
+      "name": "@omdsh-plugins/omdsh-code",
+      "repo": "omdsh-plugins/omdsh-code",
+      "version": "0.1.0",
+      "description": "Code mode for the DeepSeek Harness web GUI: a third segment beside Chat and Work whose column is the harness's own terminal, running in the conversation's workspace",
+      "plughub": {
+        "displayName": {
+          "": "Code Mode",
+          "zh": "代码模式"
+        },
+        "summary": {
+          "": "A harness terminal in the conversation's workspace, beside Chat and Work.",
+          "zh": "在对话所属的工作区里开一个 harness 终端，与 Chat、Work 并列。"
+        },
+        "category": "workspace",
+        "docs": "https://github.com/omdsh-plugins/omdsh-code#readme",
+        "order": 40
+      }
+    },
+    {
+      "name": "@omdsh-plugins/omdsh-editor",
+      "repo": "omdsh-plugins/omdsh-editor",
+      "version": "0.1.0",
+      "description": "Open the current project directory in a native editor from the DeepSeek Harness web GUI: the session header's editor picker, and the host half that finds the installed editors and launches one",
+      "plughub": {
+        "displayName": {
+          "": "External Editor",
+          "zh": "外部编辑器"
+        },
+        "summary": {
+          "": "Open the conversation's directory in the editor, terminal, or file manager you actually use.",
+          "zh": "用你真正在用的编辑器、终端或文件管理器打开当前会话的目录。"
+        },
+        "category": "workspace",
+        "docs": "https://github.com/omdsh-plugins/omdsh-editor#readme",
+        "order": 40
+      }
+    },
+    {
+      "name": "@omdsh-plugins/omdsh-justchat",
+      "repo": "omdsh-plugins/omdsh-justchat",
+      "version": "0.1.0",
+      "description": "Chat mode for the DeepSeek Harness web GUI: a Chat/Work switch above the conversation, a workspace-free session-intent surface, and the managed Chat workspace its conversations are kept in",
+      "plughub": {
+        "displayName": {
+          "": "Chat Mode",
+          "zh": "聊天模式"
+        },
+        "summary": {
+          "": "Start a conversation without picking a project directory, kept together under Chat.",
+          "zh": "不用选项目目录就能开始对话，这些对话统一放在侧栏的 Chat 下面。"
+        },
+        "category": "workspace",
+        "docs": "https://github.com/omdsh-plugins/omdsh-justchat#readme",
+        "order": 40
+      }
+    },
+    {
+      "name": "@omdsh-plugins/omdsh-sidechat",
+      "repo": "omdsh-plugins/omdsh-sidechat",
+      "version": "0.1.0",
+      "description": "Summon a conversation of its own anywhere in the DeepSeek Harness web GUI: a side panel anchored to whatever you were looking at, asking in its own session so the conversation you are running is untouched",
+      "plughub": {
+        "displayName": {
+          "": "Side Chat",
+          "zh": "侧边对话"
+        },
+        "summary": {
+          "": "Summon a conversation of its own anywhere, anchored to whatever you were looking at.",
+          "zh": "在任何位置召唤一条独立的对话，带上你正看着的东西作为锚点。"
+        },
+        "category": "input",
+        "docs": "https://github.com/omdsh-plugins/omdsh-sidechat#readme",
+        "order": 40
+      }
+    },
+    {
+      "name": "@omdsh-plugins/omdsh-sidepanel",
+      "repo": "omdsh-plugins/omdsh-sidepanel",
+      "version": "0.1.0",
+      "description": "Work-mode side panels for the DeepSeek Harness web GUI: a right file explorer with previews and a bottom terminal, both absent in Chat mode",
+      "plughub": {
+        "displayName": {
+          "": "Side Panels",
+          "zh": "侧边面板"
+        },
+        "summary": {
+          "": "A file tree down the right edge and a terminal along the bottom, in Work mode.",
+          "zh": "右边一列文件树，下边一条终端，只在 Work 模式下出现。"
+        },
+        "category": "workspace",
+        "docs": "https://github.com/omdsh-plugins/omdsh-sidepanel#readme",
+        "order": 40
+      }
+    }
+  ]
+}
