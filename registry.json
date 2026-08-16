@@ -114,16 +114,16 @@
     {
       "name": "@omdsh-plugins/omdsh-status",
       "repo": "omdsh-plugins/omdsh-status",
-      "version": "0.1.0",
-      "description": "Current project and its git state at a glance for the DeepSeek Harness web GUI: the project name with its branch and change counts, at the top-right corner of the Work window's conversation header",
+      "version": "0.1.1",
+      "description": "Current project and its git state at a glance for the DeepSeek Harness web GUI: the project name with its branch and change counts, in the Work window's conversation header, left of the Session log export button",
       "plughub": {
         "displayName": {
           "": "Status",
           "zh": "状态"
         },
         "summary": {
-          "": "Project name and git branch with change counts, at the top-right of the Work window.",
-          "zh": "在 Work 窗口右上角显示当前项目名称与 git 分支和变更计数。"
+          "": "Project name and git branch with change counts, in the conversation header left of the Session log button.",
+          "zh": "在会话顶栏的 Session log 按钮左边显示当前项目名称与 git 分支和变更计数。"
         },
         "category": "insight",
         "docs": "https://github.com/omdsh-plugins/omdsh-status#readme",
@@ -153,7 +153,7 @@
     {
       "name": "@omdsh-plugins/omdsh-code",
       "repo": "omdsh-plugins/omdsh-code",
-      "version": "0.1.1",
+      "version": "0.1.2",
       "description": "Code mode for the DeepSeek Harness web GUI: a third segment beside Chat and Work whose column is the harness's own terminal, running in the conversation's workspace",
       "plughub": {
         "displayName": {
@@ -191,7 +191,7 @@
     {
       "name": "@omdsh-plugins/omdsh-justchat",
       "repo": "omdsh-plugins/omdsh-justchat",
-      "version": "0.1.1",
+      "version": "0.1.2",
       "description": "Chat mode for the DeepSeek Harness web GUI: a Chat/Work switch above the conversation, a workspace-free session-intent surface, and the managed Chat workspace its conversations are kept in",
       "plughub": {
         "displayName": {
