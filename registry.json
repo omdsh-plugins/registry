@@ -4,7 +4,7 @@
       "name": "@omdsh-plugins/omdsh-plughub",
       "repo": "omdsh-plugins/omdsh-plughub",
       "spec": "@omdsh-plugins/omdsh-plughub",
-      "version": "0.1.3",
+      "version": "0.2.0",
       "description": "The omdsh plugin hub: a Settings tab that installs and removes omdsh plugins from a configurable upstream, and configures every installed one from the settings schema it already registers",
       "plughub": {
         "displayName": {
@@ -26,7 +26,7 @@
     {
       "name": "@omdsh-plugins/omdsh-shortcuts",
       "repo": "omdsh-plugins/omdsh-shortcuts",
-      "version": "0.1.1",
+      "version": "0.2.0",
       "description": "Bind a chord to anything the harness can do: a menu the desktop shell renders natively, a switchboard the runtime dispatches through, and an in-page listener for the web — one document, two surfaces",
       "plughub": {
         "displayName": {
@@ -48,7 +48,7 @@
     {
       "name": "@omdsh-plugins/omdsh-remdev",
       "repo": "omdsh-plugins/omdsh-remdev",
-      "version": "0.1.1",
+      "version": "0.2.0",
       "description": "Remote development for the DeepSeek Harness web GUI: connect a workspace to an SSH server, provision a .dsh-server there, run its files, terminals, and agents on that machine, and load its project skills",
       "plughub": {
         "displayName": {
@@ -92,7 +92,7 @@
     {
       "name": "@omdsh-plugins/omdsh-usage",
       "repo": "omdsh-plugins/omdsh-usage",
-      "version": "0.1.0",
+      "version": "0.2.0",
       "description": "API spend at a glance for the DeepSeek Harness web GUI: this conversation, this project, and the account balance, beside the mode chip in Chat and Work and in the corner in Code",
       "plughub": {
         "displayName": {
@@ -114,7 +114,7 @@
     {
       "name": "@omdsh-plugins/omdsh-status",
       "repo": "omdsh-plugins/omdsh-status",
-      "version": "0.1.2",
+      "version": "0.2.0",
       "description": "Current project and its git state at a glance for the DeepSeek Harness web GUI: the project name with its branch and change counts, in the Work window's conversation header, left of the Session log export button",
       "plughub": {
         "displayName": {
@@ -153,8 +153,8 @@
     {
       "name": "@omdsh-plugins/omdsh-chatmode",
       "repo": "omdsh-plugins/omdsh-chatmode",
-      "version": "0.1.2",
-      "description": "Chat mode for the DeepSeek Harness web GUI: a Chat/Work switch above the conversation, a workspace-free session-intent surface, and the managed Chat workspace its conversations are kept in",
+      "version": "0.2.0",
+      "description": "Chat mode for the DeepSeek Harness web GUI: a Chat/Work switch above the conversation, and the managed Chat workspace its conversations are kept in, so a question that is not about a project does not need one",
       "plughub": {
         "displayName": {
           "": "Chat Mode",
