@@ -114,7 +114,7 @@
     {
       "name": "@omdsh-plugins/omdsh-status",
       "repo": "omdsh-plugins/omdsh-status",
-      "version": "0.1.1",
+      "version": "0.1.2",
       "description": "Current project and its git state at a glance for the DeepSeek Harness web GUI: the project name with its branch and change counts, in the Work window's conversation header, left of the Session log export button",
       "plughub": {
         "displayName": {
