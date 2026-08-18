@@ -133,7 +133,7 @@ packages are not released together.
 
 | | `spec` | What an install does |
 |---|---|---|
-| Published to npm | `"@omdsh-plugins/omdsh-base"` | Fetches the release. No build, no toolchain needed |
+| Published to npm | `"@omdsh-plugins/omdsh-basemode"` | Fetches the release. No build, no toolchain needed |
 | Not yet published | omitted → `github:<repo>` | Clones the repository, which builds itself in `prepare` |
 
 Which is which is the `ON_NPM` set at the top of `build.mjs`. **Add a name to it
@@ -141,7 +141,7 @@ the moment `npm publish` succeeds for that package, and re-run** — a row namin
 a package npm does not have is a row whose Install button fails, which is the
 one thing a single collection-wide flag would have got wrong.
 
-Today `@omdsh-plugins/omdsh-base` and `@omdsh-plugins/omdsh-plughub` are on npm
+Today `@omdsh-plugins/omdsh-basemode` and `@omdsh-plugins/omdsh-plughub` are on npm
 and the other nine install from GitHub. `node registry/build.mjs` prints the
 split, so a run that failed to pick up a publish is visible immediately rather
 than in a card somebody clicks a week later.

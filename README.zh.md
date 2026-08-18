@@ -111,14 +111,14 @@ web profile 里加插件。扫描深度是机制，界面互斥才是理由。
 
 | | `spec` | 安装时做什么 |
 |---|---|---|
-| 已发布到 npm | `"@omdsh-plugins/omdsh-base"` | 直接拉发布版，不构建，机器上不需要工具链 |
+| 已发布到 npm | `"@omdsh-plugins/omdsh-basemode"` | 直接拉发布版，不构建，机器上不需要工具链 |
 | 尚未发布 | 省略 → `github:<repo>` | clone 仓库，在 `prepare` 里自己构建 |
 
 谁是哪种，由 `build.mjs` 顶部的 `ON_NPM` 集合决定。**某个包 `npm publish` 成功的那一刻
 就把它的名字加进去，然后重跑**——一行指向 npm 上不存在的包，就是一个点了必定失败的
 安装按钮，而这正是"整个集合一个开关"会搞错的地方。
 
-目前 `@omdsh-plugins/omdsh-base` 和 `@omdsh-plugins/omdsh-plughub` 在 npm 上，其余九个
+目前 `@omdsh-plugins/omdsh-basemode` 和 `@omdsh-plugins/omdsh-plughub` 在 npm 上，其余九个
 从 GitHub 安装。`node registry/build.mjs` 会把这个划分打印出来，所以"漏加了一个刚发布的
 包"当场就能看见，而不是等一周后有人点了那张卡片才发现。
 

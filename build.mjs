@@ -44,7 +44,7 @@ const COLLECTION = resolve(HERE, '..')
  * @type {ReadonlySet<string>}
  */
 const ON_NPM = new Set([
-  '@omdsh-plugins/omdsh-base',
+  '@omdsh-plugins/omdsh-basemode',
   '@omdsh-plugins/omdsh-plughub',
 ])
 
