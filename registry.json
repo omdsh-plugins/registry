@@ -4,7 +4,7 @@
       "name": "@omdsh-plugins/omdsh-plughub",
       "repo": "omdsh-plugins/omdsh-plughub",
       "spec": "@omdsh-plugins/omdsh-plughub",
-      "version": "0.2.1",
+      "version": "0.2.3",
       "description": "The omdsh plugin hub: a Settings tab that installs and removes omdsh plugins from a configurable upstream, and configures every installed one from the settings schema it already registers",
       "plughub": {
         "displayName": {
@@ -26,7 +26,7 @@
     {
       "name": "@omdsh-plugins/omdsh-shortcuts",
       "repo": "omdsh-plugins/omdsh-shortcuts",
-      "version": "0.2.0",
+      "version": "0.2.1",
       "description": "Bind a chord to anything the harness can do: a menu the desktop shell renders natively, a switchboard the runtime dispatches through, and an in-page listener for the web — one document, two surfaces",
       "plughub": {
         "displayName": {
@@ -48,7 +48,7 @@
     {
       "name": "@omdsh-plugins/omdsh-document",
       "repo": "omdsh-plugins/omdsh-document",
-      "version": "0.3.0",
+      "version": "0.2.0",
       "description": "Document attachments for the DeepSeek Harness web GUI: a Document row under an Attachments heading in the composer's plus menu, whole-window drag-and-drop and paste that turn Word, PowerPoint, Excel, PDF, Markdown and plain text into text the agent reads with the message",
       "plughub": {
         "displayName": {
@@ -70,7 +70,7 @@
     {
       "name": "@omdsh-plugins/omdsh-remdev",
       "repo": "omdsh-plugins/omdsh-remdev",
-      "version": "0.2.0",
+      "version": "0.2.1",
       "description": "Remote development for the DeepSeek Harness web GUI: connect a workspace to an SSH server, provision a .dsh-server there, run its files, terminals, conversations and agents on that machine — Work mode included, as the harness running there shown here",
       "plughub": {
         "displayName": {
@@ -92,7 +92,7 @@
     {
       "name": "@omdsh-plugins/omdsh-vision",
       "repo": "omdsh-plugins/omdsh-vision",
-      "version": "0.2.0",
+      "version": "0.2.1",
       "description": "Sight for a text-only model: see_image, ask_image and watch_video tools plus a mirrored model route that accepts pasted pictures, all of them sending the image to a vision model you configure and handing DeepSeek back what it shows",
       "plughub": {
         "displayName": {
@@ -114,7 +114,7 @@
     {
       "name": "@omdsh-plugins/omdsh-remctrl",
       "repo": "omdsh-plugins/omdsh-remctrl",
-      "version": "0.2.0",
+      "version": "0.2.1",
       "description": "Remote control for the DeepSeek Harness: puts its own interface on a public address behind a passcode, over a cloudflared tunnel by default, so the window you reach from a phone is the window you left open",
       "plughub": {
         "displayName": {
@@ -136,7 +136,7 @@
     {
       "name": "@omdsh-plugins/omdsh-usage",
       "repo": "omdsh-plugins/omdsh-usage",
-      "version": "0.2.0",
+      "version": "0.2.1",
       "description": "API spend at a glance for the DeepSeek Harness web GUI: this conversation, this project, and the account balance, beside the mode chip in Chat and Work and in the corner in Code",
       "plughub": {
         "displayName": {
@@ -158,7 +158,7 @@
     {
       "name": "@omdsh-plugins/omdsh-status",
       "repo": "omdsh-plugins/omdsh-status",
-      "version": "0.2.1",
+      "version": "0.2.2",
       "description": "Current project and its git state at a glance for the DeepSeek Harness web GUI: the project name with its branch and change counts, in the Work window's conversation header, left of the Session log export button",
       "plughub": {
         "displayName": {
@@ -178,7 +178,7 @@
       "name": "@omdsh-plugins/omdsh-basemode",
       "repo": "omdsh-plugins/omdsh-basemode",
       "spec": "@omdsh-plugins/omdsh-basemode",
-      "version": "0.2.0",
+      "version": "0.2.1",
       "description": "The session-mode system for the DeepSeek Harness web GUI: the segment registry every mode plugin registers into, the switch that renders them, and the sidebar dots that colour their conversations",
       "plughub": {
         "displayName": {
@@ -197,7 +197,7 @@
     {
       "name": "@omdsh-plugins/omdsh-chatmode",
       "repo": "omdsh-plugins/omdsh-chatmode",
-      "version": "0.2.0",
+      "version": "0.2.1",
       "description": "Chat mode for the DeepSeek Harness web GUI: a Chat/Work switch above the conversation, and the managed Chat workspace its conversations are kept in, so a question that is not about a project does not need one",
       "plughub": {
         "displayName": {
@@ -216,7 +216,7 @@
     {
       "name": "@omdsh-plugins/omdsh-codemode",
       "repo": "omdsh-plugins/omdsh-codemode",
-      "version": "0.1.2",
+      "version": "0.2.0",
       "description": "Code mode for the DeepSeek Harness web GUI: a third segment beside Chat and Work whose column is the harness's own terminal, running in the conversation's workspace",
       "plughub": {
         "displayName": {
@@ -235,7 +235,7 @@
     {
       "name": "@omdsh-plugins/omdsh-editor",
       "repo": "omdsh-plugins/omdsh-editor",
-      "version": "0.1.0",
+      "version": "0.2.0",
       "description": "Open the current project directory in a native editor from the DeepSeek Harness web GUI: the session header's editor picker, and the host half that finds the installed editors and launches one",
       "plughub": {
         "displayName": {
@@ -254,7 +254,7 @@
     {
       "name": "@omdsh-plugins/omdsh-sidechat",
       "repo": "omdsh-plugins/omdsh-sidechat",
-      "version": "0.1.2",
+      "version": "0.2.0",
       "description": "Summon a conversation of its own anywhere in the DeepSeek Harness web GUI: a side panel anchored to whatever you were looking at, asking in its own session so the conversation you are running is untouched",
       "plughub": {
         "displayName": {
@@ -273,7 +273,7 @@
     {
       "name": "@omdsh-plugins/omdsh-sidepanel",
       "repo": "omdsh-plugins/omdsh-sidepanel",
-      "version": "0.1.0",
+      "version": "0.2.0",
       "description": "Work-mode side panels for the DeepSeek Harness web GUI: a right file explorer with previews and a bottom terminal, both absent in Chat mode",
       "plughub": {
         "displayName": {
