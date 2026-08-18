@@ -29,10 +29,13 @@ const COLLECTION = resolve(HERE, '..')
 /**
  * The packages that install from npm, rather than from GitHub.
  *
- * Only the hub belongs here. It is the bootstrap: `dsh plugin add` and `npx`
- * fetch it from the registry, and it is then what installs everything else.
  * A name listed here emits `spec: "<name>"`; every other row omits `spec` and
  * is installed as `github:<repo>` — a clone that builds itself in `prepare`.
+ *
+ * The hub is the bootstrap: `dsh plugin add` and `npx` fetch it from the
+ * registry, and it is then what installs everything else. The mode system is
+ * here too: it is published, chatmode and codemode install it by name, and a
+ * git install would run `prepare` for a package that already ships `lib/`.
  *
  * Do not add a package just because it exists on npm. The collection installs
  * those from GitHub on purpose: the hub writes the pnpm build-allowlist a git
@@ -42,6 +45,22 @@ const COLLECTION = resolve(HERE, '..')
  */
 const ON_NPM = new Set([
   '@omdsh-plugins/omdsh-plughub',
+  '@omdsh-plugins/omdsh-basemode',
+])
+
+/**
+ * Packages present on disk that the catalog should not recommend, for now.
+ *
+ * A sibling that declares a bundle patch is otherwise always a row. Listing a
+ * name here drops it from the generated file without deleting the checkout, so
+ * putting the card back is deleting the name. The hub still finds an unlisted
+ * plugin through GitHub enumeration, when that source is on; the default
+ * install has enumeration off, so this is what takes a card off
+ * Settings → Plugins.
+ * @type {ReadonlySet<string>}
+ */
+const UNLISTED = new Set([
+  '@omdsh-plugins/omdsh-remdev',
 ])
 
 /** The GitHub account the collection is published under. */
@@ -112,6 +131,10 @@ function collect() {
     // installable into a profile exactly when it declares a bundle patch.
     const patch = manifest.dsh?.bundle?.patch
     if (typeof patch !== 'string' || patch === '') continue
+    if (UNLISTED.has(manifest.name)) {
+      console.warn(`unlisted ${directory.name}: held out of the catalog`)
+      continue
+    }
     const repo = repoOf(manifest, directory.name)
     if (repo === undefined) {
       console.warn(`skipping ${directory.name}: its repository is not under ${UPSTREAM}`)

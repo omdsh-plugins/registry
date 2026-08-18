@@ -134,18 +134,22 @@ exist on npm.
 | | `spec` | What an install does |
 |---|---|---|
 | The hub | `"@omdsh-plugins/omdsh-plughub"` | Fetches the release. No build, no toolchain needed |
+| The mode system | `"@omdsh-plugins/omdsh-basemode"` | Same: the release, because chatmode and codemode install it by name |
 | Everything else | omitted → `github:<repo>` | Clones the repository, which builds itself in `prepare` |
 
-Which is which is the `ON_NPM` set at the top of `build.mjs`. **It holds only
-the hub.** The hub is the bootstrap — it has to install from npm so a machine
-can get the installer without cloning anything — and every other plugin
-installs from GitHub, even one that also exists on npm. Adding a name here the
-moment `npm publish` succeeds would make the Install button fetch the registry
-copy, which is not how this collection installs it.
+Which is which is the `ON_NPM` set at the top of `build.mjs`. **It holds the
+hub and the mode system.** The hub is the bootstrap — it has to install from
+npm so a machine can get the installer without cloning anything. The mode
+system is published too, and the two mode plugins install it by name, so a
+git install would run `prepare` for a package that already ships `lib/`.
+Every other plugin installs from GitHub, even one that also exists on npm.
+Adding a name here the moment `npm publish` succeeds would make the Install
+button fetch the registry copy, which is not how this collection installs it.
 
-Today only `@omdsh-plugins/omdsh-plughub` installs from npm. `node registry/build.mjs`
-prints the split, so a run that put another name on the npm side is visible
-immediately rather than in a card somebody clicks a week later.
+Today `@omdsh-plugins/omdsh-plughub` and `@omdsh-plugins/omdsh-basemode`
+install from npm. `node registry/build.mjs` prints the split, so a run that
+moved another name onto the npm side is visible immediately rather than in a
+card somebody clicks a week later.
 
 ## Commands
 

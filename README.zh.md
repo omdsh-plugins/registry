@@ -112,11 +112,12 @@ web profile 里加插件。扫描深度是机制，界面互斥才是理由。
 | | `spec` | 安装时做什么 |
 |---|---|---|
 | 插件中心 | `"@omdsh-plugins/omdsh-plughub"` | 直接拉发布版，不构建，机器上不需要工具链 |
+| 模式系统 | `"@omdsh-plugins/omdsh-basemode"` | 同样拉发布版，因为 chatmode 和 codemode 按名字装它 |
 | 其余全部 | 省略 → `github:<repo>` | clone 仓库，在 `prepare` 里自己构建 |
 
-谁是哪种，由 `build.mjs` 顶部的 `ON_NPM` 集合决定。**里面只有插件中心。** 它是那条引导线——必须从 npm 装，机器才不用先 clone 任何东西就能拿到安装器——其余每一个插件都从 GitHub 装，哪怕它也在 npm 上。`npm publish` 成功的那一刻就把名字加进去，安装按钮就会去拉 registry 上的那一份，而这不是这套集合装它的方式。
+谁是哪种，由 `build.mjs` 顶部的 `ON_NPM` 集合决定。**里面是插件中心和模式系统。** 插件中心是那条引导线——必须从 npm 装，机器才不用先 clone 任何东西就能拿到安装器。模式系统也已经发布，两个模式插件按名字装它，所以再走 git 安装会给一个已经带 `lib/` 的包跑一遍 `prepare`。其余每一个插件都从 GitHub 装，哪怕它也在 npm 上。`npm publish` 成功的那一刻就把名字加进去，安装按钮就会去拉 registry 上的那一份，而这不是这套集合装它的方式。
 
-目前只有 `@omdsh-plugins/omdsh-plughub` 从 npm 安装。`node registry/build.mjs` 会把这个划分打印出来，所以一次把别的名字划到 npm 那边的重跑，当场就能看见，而不是等一周后有人点了那张卡片才发现。
+目前 `@omdsh-plugins/omdsh-plughub` 和 `@omdsh-plugins/omdsh-basemode` 从 npm 安装。`node registry/build.mjs` 会把这个划分打印出来，所以一次把别的名字划到 npm 那边的重跑，当场就能看见，而不是等一周后有人点了那张卡片才发现。
 
 ## 命令
 

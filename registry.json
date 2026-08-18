@@ -68,28 +68,6 @@
       }
     },
     {
-      "name": "@omdsh-plugins/omdsh-remdev",
-      "repo": "omdsh-plugins/omdsh-remdev",
-      "version": "0.2.1",
-      "description": "Remote development for the DeepSeek Harness web GUI: connect a workspace to an SSH server, provision a .dsh-server there, run its files, terminals, conversations and agents on that machine — Work mode included, as the harness running there shown here",
-      "plughub": {
-        "displayName": {
-          "": "Remote Development",
-          "zh": "远程开发"
-        },
-        "summary": {
-          "": "Attach a workspace to an SSH server: its files, terminals, project skills and Work conversations all run there — enter a server and the screen is the dsh on it.",
-          "zh": "把工作区接到一台 SSH 服务器上，文件、终端、项目技能和 Work 会话都在那台机器上跑——进入服务器之后，整个界面就是它上面那个 dsh。"
-        },
-        "category": "workspace",
-        "settings": [
-          "omdsh-remdev"
-        ],
-        "docs": "https://github.com/omdsh-plugins/omdsh-remdev#readme",
-        "order": 20
-      }
-    },
-    {
       "name": "@omdsh-plugins/omdsh-vision",
       "repo": "omdsh-plugins/omdsh-vision",
       "version": "0.2.1",
@@ -177,6 +155,7 @@
     {
       "name": "@omdsh-plugins/omdsh-basemode",
       "repo": "omdsh-plugins/omdsh-basemode",
+      "spec": "@omdsh-plugins/omdsh-basemode",
       "version": "0.2.1",
       "description": "The session-mode system for the DeepSeek Harness web GUI: the segment registry every mode plugin registers into, the switch that renders them, and the sidebar dots that colour their conversations",
       "plughub": {
