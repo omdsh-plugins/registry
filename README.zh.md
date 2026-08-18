@@ -107,20 +107,16 @@ web profile 里加插件。扫描深度是机制，界面互斥才是理由。
 
 ## 一行从哪里安装
 
-两种答案，**按包**决定而不是按集合决定——因为这些包不是一起发布的。
+两种答案，按设计决定，而不是按这个包碰巧在不在 npm 上决定。
 
 | | `spec` | 安装时做什么 |
 |---|---|---|
-| 已发布到 npm | `"@omdsh-plugins/omdsh-basemode"` | 直接拉发布版，不构建，机器上不需要工具链 |
-| 尚未发布 | 省略 → `github:<repo>` | clone 仓库，在 `prepare` 里自己构建 |
+| 插件中心 | `"@omdsh-plugins/omdsh-plughub"` | 直接拉发布版，不构建，机器上不需要工具链 |
+| 其余全部 | 省略 → `github:<repo>` | clone 仓库，在 `prepare` 里自己构建 |
 
-谁是哪种，由 `build.mjs` 顶部的 `ON_NPM` 集合决定。**某个包 `npm publish` 成功的那一刻
-就把它的名字加进去，然后重跑**——一行指向 npm 上不存在的包，就是一个点了必定失败的
-安装按钮，而这正是"整个集合一个开关"会搞错的地方。
+谁是哪种，由 `build.mjs` 顶部的 `ON_NPM` 集合决定。**里面只有插件中心。** 它是那条引导线——必须从 npm 装，机器才不用先 clone 任何东西就能拿到安装器——其余每一个插件都从 GitHub 装，哪怕它也在 npm 上。`npm publish` 成功的那一刻就把名字加进去，安装按钮就会去拉 registry 上的那一份，而这不是这套集合装它的方式。
 
-目前 `@omdsh-plugins/omdsh-basemode` 和 `@omdsh-plugins/omdsh-plughub` 在 npm 上，其余九个
-从 GitHub 安装。`node registry/build.mjs` 会把这个划分打印出来，所以"漏加了一个刚发布的
-包"当场就能看见，而不是等一周后有人点了那张卡片才发现。
+目前只有 `@omdsh-plugins/omdsh-plughub` 从 npm 安装。`node registry/build.mjs` 会把这个划分打印出来，所以一次把别的名字划到 npm 那边的重跑，当场就能看见，而不是等一周后有人点了那张卡片才发现。
 
 ## 命令
 

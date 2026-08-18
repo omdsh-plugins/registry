@@ -128,23 +128,24 @@ cost of a curated catalog, and it is the reason the generator exists.
 
 ## Where a row installs from
 
-Two answers, decided per package rather than for the collection, because the
-packages are not released together.
+Two answers, decided on purpose rather than by whether the package happens to
+exist on npm.
 
 | | `spec` | What an install does |
 |---|---|---|
-| Published to npm | `"@omdsh-plugins/omdsh-basemode"` | Fetches the release. No build, no toolchain needed |
-| Not yet published | omitted → `github:<repo>` | Clones the repository, which builds itself in `prepare` |
+| The hub | `"@omdsh-plugins/omdsh-plughub"` | Fetches the release. No build, no toolchain needed |
+| Everything else | omitted → `github:<repo>` | Clones the repository, which builds itself in `prepare` |
 
-Which is which is the `ON_NPM` set at the top of `build.mjs`. **Add a name to it
-the moment `npm publish` succeeds for that package, and re-run** — a row naming
-a package npm does not have is a row whose Install button fails, which is the
-one thing a single collection-wide flag would have got wrong.
+Which is which is the `ON_NPM` set at the top of `build.mjs`. **It holds only
+the hub.** The hub is the bootstrap — it has to install from npm so a machine
+can get the installer without cloning anything — and every other plugin
+installs from GitHub, even one that also exists on npm. Adding a name here the
+moment `npm publish` succeeds would make the Install button fetch the registry
+copy, which is not how this collection installs it.
 
-Today `@omdsh-plugins/omdsh-basemode` and `@omdsh-plugins/omdsh-plughub` are on npm
-and the other nine install from GitHub. `node registry/build.mjs` prints the
-split, so a run that failed to pick up a publish is visible immediately rather
-than in a card somebody clicks a week later.
+Today only `@omdsh-plugins/omdsh-plughub` installs from npm. `node registry/build.mjs`
+prints the split, so a run that put another name on the npm side is visible
+immediately rather than in a card somebody clicks a week later.
 
 ## Commands
 

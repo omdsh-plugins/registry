@@ -27,24 +27,20 @@ const HERE = dirname(fileURLToPath(import.meta.url))
 const COLLECTION = resolve(HERE, '..')
 
 /**
- * The packages that exist on npm, and therefore install from it.
+ * The packages that install from npm, rather than from GitHub.
  *
- * Per package rather than one switch for the collection, because the two are
- * not released together: a name listed here emits `spec: "<name>"` and installs
- * from the registry, and every other row omits `spec` and is installed as
- * `github:<repo>` — a clone that builds itself in `prepare`. Both work; the
- * registry install is simply faster and needs no toolchain on the machine
- * doing it.
+ * Only the hub belongs here. It is the bootstrap: `dsh plugin add` and `npx`
+ * fetch it from the registry, and it is then what installs everything else.
+ * A name listed here emits `spec: "<name>"`; every other row omits `spec` and
+ * is installed as `github:<repo>` — a clone that builds itself in `prepare`.
  *
- * A single flag here would have been wrong in one specific way: it would have
- * emitted npm specifiers for the nine packages that are NOT published, and a
- * row naming a package the registry does not have is a row whose Install button
- * fails. The cost is that this list is hand-kept — add a name the moment
- * `npm publish` succeeds for it, and re-run.
+ * Do not add a package just because it exists on npm. The collection installs
+ * those from GitHub on purpose: the hub writes the pnpm build-allowlist a git
+ * specifier needs, and a registry specifier would fetch a copy the catalog
+ * did not ask for.
  * @type {ReadonlySet<string>}
  */
 const ON_NPM = new Set([
-  '@omdsh-plugins/omdsh-basemode',
   '@omdsh-plugins/omdsh-plughub',
 ])
 
