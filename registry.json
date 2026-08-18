@@ -156,7 +156,7 @@
       "name": "@omdsh-plugins/omdsh-basemode",
       "repo": "omdsh-plugins/omdsh-basemode",
       "spec": "@omdsh-plugins/omdsh-basemode",
-      "version": "0.2.1",
+      "version": "0.2.2",
       "description": "The session-mode system for the DeepSeek Harness web GUI: the segment registry every mode plugin registers into, the switch that renders them, and the sidebar dots that colour their conversations",
       "plughub": {
         "displayName": {
