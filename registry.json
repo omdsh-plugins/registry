@@ -4,16 +4,16 @@
       "name": "@omdsh-plugins/omdsh-plughub",
       "repo": "omdsh-plugins/omdsh-plughub",
       "spec": "@omdsh-plugins/omdsh-plughub",
-      "version": "0.2.3",
-      "description": "The omdsh plugin hub: a Settings tab that installs and removes omdsh plugins from a configurable upstream, and configures every installed one from the settings schema it already registers",
+      "version": "0.2.4",
+      "description": "The omdsh plugin hub: a Settings tab that installs, disables and configures omdsh plugins from a configurable upstream, from the settings schema each already registers",
       "plughub": {
         "displayName": {
           "": "Plugin Hub",
           "zh": "插件中心"
         },
         "summary": {
-          "": "Install, remove, and configure omdsh plugins from inside Settings.",
-          "zh": "在设置里安装、卸载并配置 omdsh 插件。"
+          "": "Install, disable, and configure omdsh plugins from inside Settings.",
+          "zh": "在设置里安装、停用并配置 omdsh 插件。"
         },
         "category": "system",
         "settings": [
@@ -93,15 +93,15 @@
       "name": "@omdsh-plugins/omdsh-vision",
       "repo": "omdsh-plugins/omdsh-vision",
       "version": "0.2.1",
-      "description": "Sight for a text-only model: see_image, ask_image and watch_video tools plus a mirrored model route that accepts pasted pictures, all of them sending the image to a vision model you configure and handing DeepSeek back what it shows",
+      "description": "Sight for a text-only model: see_image, ask_image and watch_video tools plus a mirrored model route, shipping Qwen VL on DashScope, handing DeepSeek back what the vision model shows",
       "plughub": {
         "displayName": {
           "": "Vision",
           "zh": "视觉"
         },
         "summary": {
-          "": "Let a text-only model read images and videos: point it at a vision model, paste a picture or name a file, and it describes what is there.",
-          "zh": "让只能读文字的模型看懂图片和视频：配一个视觉模型，粘贴一张图或指一个文件，它来讲里面有什么。"
+          "": "Let a text-only model read images and videos: Qwen VL as shipped, or a vision model you configure.",
+          "zh": "让只能读文字的模型看懂图片和视频：出厂接 Qwen VL，也可以换成你配的视觉模型。"
         },
         "category": "input",
         "settings": [
