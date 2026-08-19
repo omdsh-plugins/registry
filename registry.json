@@ -48,7 +48,7 @@
     {
       "name": "@omdsh-plugins/omdsh-document",
       "repo": "omdsh-plugins/omdsh-document",
-      "version": "0.2.0",
+      "version": "0.2.1",
       "description": "Document attachments for the DeepSeek Harness web GUI: a Document row under an Attachments heading in the composer's plus menu, whole-window drag-and-drop and paste that turn Word, PowerPoint, Excel, PDF, Markdown and plain text into text the agent reads with the message",
       "plughub": {
         "displayName": {
