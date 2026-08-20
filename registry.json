@@ -263,6 +263,9 @@
           "zh": "右边一列文件树，下边一条终端，只在 Work 模式下出现。"
         },
         "category": "workspace",
+        "settings": [
+          "omdsh-sidepanel"
+        ],
         "docs": "https://github.com/omdsh-plugins/omdsh-sidepanel#readme",
         "order": 40
       }
