@@ -175,7 +175,7 @@
     {
       "name": "@omdsh-plugins/omdsh-chatmode",
       "repo": "omdsh-plugins/omdsh-chatmode",
-      "version": "0.2.2",
+      "version": "0.2.3",
       "description": "Chat mode for the DeepSeek Harness web GUI: a Chat/Work switch above the conversation, and the managed Chat workspace its conversations are kept in, so a question that is not about a project does not need one",
       "plughub": {
         "displayName": {
