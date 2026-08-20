@@ -251,7 +251,7 @@
     {
       "name": "@omdsh-plugins/omdsh-sidepanel",
       "repo": "omdsh-plugins/omdsh-sidepanel",
-      "version": "0.2.1",
+      "version": "0.2.2",
       "description": "Work-mode side panels for the DeepSeek Harness web GUI: a right file explorer with previews and a bottom terminal, both absent in Chat mode",
       "plughub": {
         "displayName": {
